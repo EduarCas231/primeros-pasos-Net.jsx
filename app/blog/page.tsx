@@ -1,26 +1,8 @@
-import React from "react";
-import Link from "next/link";
 
-const blogSections = [
-    {
-        href: "/blog/actualidad-tecnologica",
-        label: "Actualidad tecnológica",
-        description: "Tendencias, herramientas y proyectos que están transformando el entorno digital.",
-        number: "01",
-    },
-    {
-        href: "/blog/areas-de-formacion",
-        label: "Áreas de formación",
-        description: "Desarrollo de software, redes, datos, ciberseguridad e innovación aplicada.",
-        number: "02",
-    },
-    {
-        href: "/blog/historias-que-inspiran",
-        label: "Historias que inspiran",
-        description: "Experiencias y publicaciones destacadas de nuestra comunidad académica.",
-        number: "03",
-    },
-];
+import Link from "next/link";
+import { Blogsection } from "../data/Blog-sections";
+
+
 
 function page() {
     return (
@@ -42,24 +24,26 @@ function page() {
                     <div className="mb-6 flex items-center justify-between gap-4">
                         <h2 id="explora-el-blog" className="text-xl font-semibold text-emerald-950 sm:text-2xl">Explora el blog</h2>
                         <span className="hidden text-sm font-medium text-zinc-500 sm:block">Aprende. Crea. Innova.</span>
+                        <Link href="/blog/firststeps" className="text-sm font-medium text-emerald-700 hover:text-emerald-900 sm:hidden">
+                            Ver todos los artículos
+                        </Link>
                     </div>
-                    <ul className="grid gap-4 md:grid-cols-3">
-                        {blogSections.map((section) => (
-                            <li key={section.href}>
-                                <Link
-                                    href={section.href}
-                                    className="group flex h-full min-h-56 flex-col justify-between rounded-lg border border-zinc-200 bg-white p-6 transition duration-200 hover:-translate-y-1 hover:border-emerald-500 hover:shadow-lg hover:shadow-emerald-950/10 focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-cyan-600"
-                                >
-                                    <span className="text-sm font-bold tracking-[0.14em] text-cyan-700">{section.number}</span>
-                                    <div>
-                                        <h3 className="mb-3 text-xl font-bold text-emerald-950 transition-colors group-hover:text-emerald-700">{section.label}</h3>
-                                        <p className="text-sm leading-6 text-zinc-600">{section.description}</p>
+
+                    <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+                        {Blogsection.map((section) => (
+                            <article key={section.href} className="group">
+                                <Link href={section.href}>
+                                    <div className="overflow-hidden rounded-lg bg-emerald-950 shadow-lg shadow-emerald-950/15 transition-all duration-300 group-hover:shadow-xl">
+                                        <div className="p-6">
+                                            <span className="text-4xl font-bold text-emerald-500">{section.number}</span>
+                                            <h3 className="mt-4 text-xl font-bold text-white">{section.label}</h3>
+                                            <p className="mt-2 text-emerald-100">{section.description}</p>
+                                        </div>
                                     </div>
-                                    <span className="mt-6 text-sm font-semibold text-emerald-700">Ver publicaciones <span aria-hidden="true">&rarr;</span></span>
                                 </Link>
-                            </li>
+                            </article>
                         ))}
-                    </ul>
+                    </div>
                 </section>
             </div>
         </main>
