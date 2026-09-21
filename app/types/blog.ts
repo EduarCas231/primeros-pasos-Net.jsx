@@ -1,8 +1,9 @@
-export type Blogsection = {
-    href: string;
-    label: string;
-    description: string;
-    number: string;
+export type BlogSection = {
+  href: string;
+  slug: string;
+  label: string;
+  description: string;
+  number: string;
 }
 
 export type BlogPost = {
@@ -10,8 +11,7 @@ export type BlogPost = {
     paragraphs: string[];
 }
 
-export type BlogPostPageProps = {
-    params: Promise<{
-        "slug": string;
-    }>;
+export type BlogPostContent = {
+  title: string;
+  paragraphs: string[];
 }
