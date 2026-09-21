@@ -1,7 +1,9 @@
+import Link from "next/link";
+
 function Header(){
     return (
         <header className="flex w-full flex-wrap items-center justify-between gap-x-6 gap-y-4 border-b border-zinc-200 pb-5 dark:border-zinc-800">
-            <a
+            <Link
                 href="/"
                 className="group flex items-center gap-2 text-lg font-semibold tracking-tight text-zinc-900 dark:text-white"
                 aria-label="UTVT, inicio"
@@ -32,28 +34,28 @@ function Header(){
                     />
                 </svg>
                 <span>UTVT</span>
-            </a>
+            </Link>
 
             <nav aria-label="Navegacion principal" className="order-3 w-full sm:order-0 sm:w-auto">
                 <ul className="flex items-center gap-5 overflow-x-auto text-sm font-medium text-zinc-600 dark:text-zinc-400">
                         <li>
-                        <a
+                        <Link
                             href="/" >
                             Mi carrera
-                        </a>
+                        </Link>
                     </li>
                     <li>
-                        <a
+                        <Link
                             href="/about" >
                             Acerca de
-                        </a>
+                        </Link>
                     </li>
 
                     <li>
-                        <a 
+                        <Link 
                             href="/blog">
                             Blog
-                        </a>
+                        </Link>
                     </li>
 
                     <li><a className="whitespace-nowrap transition-colors hover:text-cyan-600 dark:hover:text-cyan-400" href="https://nextjs.org/docs/app/getting-started/project-structure">Next.js</a></li>
@@ -69,7 +71,7 @@ function Header(){
                     <svg className="h-5 w-5" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
                         <path fillRule="evenodd" d="M12 2C6.477 2 2 6.578 2 12.23c0 4.522 2.865 8.352 6.839 9.707.5.094.682-.22.682-.49 0-.24-.009-.877-.014-1.722-2.782.617-3.369-1.373-3.369-1.373-.455-1.184-1.11-1.5-1.11-1.5-.908-.637.069-.624.069-.624 1.004.073 1.532 1.056 1.532 1.056.892 1.566 2.34 1.114 2.91.852.091-.665.349-1.114.635-1.37-2.22-.26-4.555-1.14-4.555-5.073 0-1.12.39-2.035 1.03-2.753-.104-.26-.446-1.308.098-2.726 0 0 .84-.276 2.75 1.051A9.284 9.284 0 0 1 12 6.13a9.27 9.27 0 0 1 2.504.35c1.91-1.327 2.748-1.051 2.748-1.051.546 1.418.203 2.466.1 2.726.64.718 1.028 1.633 1.028 2.753 0 3.943-2.34 4.81-4.568 5.066.359.32.679.95.679 1.915 0 1.383-.012 2.498-.012 2.837 0 .273.18.59.688.489C19.14 20.578 22 16.75 22 12.23 22 6.578 17.523 2 12 2Z" clipRule="evenodd" />
                     </svg>
-                </a>
+                </a> 
             </div>
         </header>
 
