@@ -1,4 +1,5 @@
 import { blogPostsContent } from "../../data/Blog-sections";
+import BlogPostContent from "@/app/utils/BlogPostContenet"
 import Link from "next/link";
 
 type Props = {
@@ -19,12 +20,10 @@ export default async function Page({ params }: Props) {
   }
 
   return (
-    <div className="mx-auto max-w-3xl px-6 py-12">
-      <Link href="/blog" className="text-sm text-emerald-700 hover:underline">← Volver al blog</Link>
-      <h1 className="mt-6 mb-6 text-4xl font-bold tracking-tight text-gray-900">{post.title}</h1>
-      {post.paragraphs.map((p, i) => (
-        <p key={i} className="mb-4 text-lg leading-8 text-gray-600">{p}</p>
-      ))}
+    <div>
+      <div className="mx-auto max-w-3xl px-6 pt-8">
+      </div>
+      <BlogPostContent post={post} />
     </div>
   );
 }

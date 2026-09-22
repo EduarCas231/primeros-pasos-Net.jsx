@@ -7,8 +7,8 @@ export type BlogSection = {
 }
 
 export type BlogPost = {
-    tittle: string;
-    paragraphs: string[];
+  title: string;
+  paragraphs: string[];
 }
 
 export type BlogPostContent = {

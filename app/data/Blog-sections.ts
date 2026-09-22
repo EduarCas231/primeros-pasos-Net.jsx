@@ -1,4 +1,4 @@
-import { BlogSection, BlogPostContent } from "../types/blog";
+import { BlogSection, BlogPost } from "../types/blog";
 
 export const Blogsection: BlogSection[] = [
   {
@@ -24,7 +24,7 @@ export const Blogsection: BlogSection[] = [
   }
 ];
 
-export const blogPostsContent: Record<string, BlogPostContent> = {
+export const blogPostsContent: Record<string, BlogPost> = {
   "actualidad-tecnologica": {
     title: "Actualidad tecnológica",
     paragraphs: [
